@@ -96,7 +96,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             Two engineers who've built AI products, scaled infrastructure, and shipped 
-            at companies like Clio, Ecobee, and Kinaxis. Now we build for you.
+            at enterprise companies. Now we build for you.
           </motion.p>
 
           <motion.div
@@ -134,14 +134,20 @@ export default function Home() {
 
       {/* Credibility bar */}
       <section className="py-12 px-6 border-y border-zinc-900">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-center text-sm text-zinc-500 mb-6">Background from</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            {["Clio", "Kinaxis", "Ecobee", "U of T"].map((company) => (
-              <span key={company} className="text-xl md:text-2xl font-semibold text-zinc-600">
-                {company}
-              </span>
-            ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 text-zinc-500">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🎓</span>
+              <span>University of Toronto</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🚀</span>
+              <span>Startup founders</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">⚡</span>
+              <span>Enterprise experience</span>
+            </div>
           </div>
         </div>
       </section>
@@ -239,13 +245,15 @@ export default function Home() {
               viewport={{ once: true }}
               className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800"
             >
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-2xl font-bold mb-4">
-                A
-              </div>
+              <img 
+                src="https://avatars.githubusercontent.com/u/76663779?v=4" 
+                alt="Anas Khan"
+                className="w-20 h-20 rounded-full mb-4 border-2 border-zinc-700"
+              />
               <h3 className="text-xl font-semibold mb-1">Anas Khan</h3>
               <p className="text-zinc-500 text-sm mb-3">Infrastructure & AI</p>
               <p className="text-zinc-400 text-sm mb-4">
-                Production Engineer at Clio. Previously Platform at Kinaxis, SRE at Ecobee. 
+                Platform and production engineering background. 
                 Scaled systems to 70k+ devices. Built multiple AI products.
               </p>
               <div className="flex gap-4">
@@ -266,9 +274,11 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800"
             >
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-2xl font-bold mb-4">
-                S
-              </div>
+              <img 
+                src="https://avatars.githubusercontent.com/u/67878058?v=4" 
+                alt="Sabih Sarowar"
+                className="w-20 h-20 rounded-full mb-4 border-2 border-zinc-700"
+              />
               <h3 className="text-xl font-semibold mb-1">Sabih Sarowar</h3>
               <p className="text-zinc-500 text-sm mb-3">Product & Engineering</p>
               <p className="text-zinc-400 text-sm mb-4">
