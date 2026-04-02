@@ -30,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className="font-sans bg-zinc-950 text-zinc-100 antialiased">
+      <body className="font-sans bg-white text-zinc-900 antialiased">
         {children}
       </body>
     </html>
