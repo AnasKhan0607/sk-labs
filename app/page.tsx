@@ -319,7 +319,7 @@ export default function Home() {
                   <h3 className="text-lg font-semibold text-zinc-900">Anas Khan</h3>
                   <p className="text-emerald-600 text-sm font-medium mb-2">Infrastructure & AI</p>
                   <p className="text-sm text-zinc-600">
-                    Production engineer at enterprise scale. Built systems handling 70k+ devices. Ships AI products.
+                    Builds high-scale production systems with secure data handling. Ships AI agents and automation products.
                   </p>
                 </div>
               </div>
@@ -334,7 +334,7 @@ export default function Home() {
                   <h3 className="text-lg font-semibold text-zinc-900">Sabih Sarowar</h3>
                   <p className="text-emerald-600 text-sm font-medium mb-2">Product & Engineering</p>
                   <p className="text-sm text-zinc-600">
-                    Founded startups in energy and municipal tech. Full-stack engineer who talks to customers.
+                    2x founder in energy and legal tech. Product-minded engineer who knows how to integrate with client systems.
                   </p>
                 </div>
               </div>
