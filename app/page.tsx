@@ -338,19 +338,27 @@ export default function Home() {
             </p>
             <h2 className="text-3xl md:text-4xl font-serif mb-16">Who you're working with.</h2>
             
-            <div className="grid md:grid-cols-2 gap-12 max-w-3xl">
+            <div className="grid md:grid-cols-2 gap-12 max-w-4xl">
               <div className="flex gap-6">
                 <img 
                   src="https://avatars.githubusercontent.com/u/76663779?v=4" 
                   alt="Anas Khan"
-                  className="w-20 h-20 object-cover grayscale"
+                  className="w-24 h-24 rounded-lg object-cover"
                 />
                 <div>
-                  <h3 className="text-lg font-serif mb-1">Anas Khan</h3>
+                  <h3 className="text-xl font-serif mb-1">Anas Khan</h3>
                   <p className="text-[#C9A66B] text-sm mb-3">Infrastructure & AI</p>
-                  <p className="text-sm text-zinc-500 leading-relaxed">
+                  <p className="text-zinc-500 leading-relaxed mb-4">
                     Builds high-scale production systems with secure data handling. Ships AI agents and automation products.
                   </p>
+                  <a 
+                    href="https://linkedin.com/in/anas-k" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm text-zinc-400 hover:text-[#C9A66B] transition-colors"
+                  >
+                    LinkedIn →
+                  </a>
                 </div>
               </div>
 
@@ -358,14 +366,22 @@ export default function Home() {
                 <img 
                   src="https://avatars.githubusercontent.com/u/67878058?v=4" 
                   alt="Sabih Sarowar"
-                  className="w-20 h-20 object-cover grayscale"
+                  className="w-24 h-24 rounded-lg object-cover"
                 />
                 <div>
-                  <h3 className="text-lg font-serif mb-1">Sabih Sarowar</h3>
+                  <h3 className="text-xl font-serif mb-1">Sabih Sarowar</h3>
                   <p className="text-[#C9A66B] text-sm mb-3">Product & Engineering</p>
-                  <p className="text-sm text-zinc-500 leading-relaxed">
+                  <p className="text-zinc-500 leading-relaxed mb-4">
                     2x founder in energy and legal tech. Product-minded engineer who knows how to integrate with client systems.
                   </p>
+                  <a 
+                    href="https://linkedin.com/in/sabihsarowar" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm text-zinc-400 hover:text-[#C9A66B] transition-colors"
+                  >
+                    LinkedIn →
+                  </a>
                 </div>
               </div>
             </div>
