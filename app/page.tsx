@@ -11,7 +11,7 @@ export default function Home() {
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#141414]/80 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-          <span className="text-xl font-semibold tracking-tight">SK Labs</span>
+          <span className="text-xl font-semibold tracking-tight">Evergreen Labs</span>
           <div className="flex items-center gap-8">
             <div className="hidden md:flex items-center gap-8 text-sm tracking-wider">
               <a href="#solutions" className="text-zinc-400 hover:text-white transition-colors">SOLUTIONS</a>
@@ -414,7 +414,7 @@ export default function Home() {
             </p>
             
             <a
-              href="mailto:hello@sklabs.dev"
+              href="mailto:hello@evergreenlabs.dev"
               className="relative inline-flex items-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all group"
             >
               <span className="absolute inset-0 bg-[#C9A66B] blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
@@ -428,7 +428,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-zinc-800">
         <div className="max-w-6xl mx-auto flex justify-between items-center text-sm text-zinc-600">
-          <span>SK Labs</span>
+          <span>Evergreen Labs</span>
           <span>Toronto, Canada</span>
         </div>
       </footer>
