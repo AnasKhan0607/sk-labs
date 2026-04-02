@@ -218,36 +218,47 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16 text-center"
           >
-            <p className="text-violet-600 text-sm font-semibold uppercase tracking-wider mb-4">Track record</p>
-            <h2 className="text-3xl md:text-5xl font-bold">Systems we've built</h2>
+            <p className="text-violet-600 text-sm font-semibold uppercase tracking-wider mb-4">What we build</p>
+            <h2 className="text-3xl md:text-5xl font-bold">AI for your industry</h2>
           </motion.div>
 
           <div className="space-y-4">
             {[
               {
-                title: "AI-Powered Feature Request Platform",
-                outcome: "Customers request features via widget. AI implements in sandbox, generates PR, creates preview deploy.",
-                impact: "Weeks → Hours"
+                title: "SaaS — Customer Support Automation",
+                outcome: "AI agent handles tier-1 tickets, escalates intelligently, drafts responses for human review. Integrated with Zendesk + Intercom.",
+                impact: "70% auto-resolved",
+                industry: "B2B SaaS"
               },
               {
-                title: "Marketplace Intelligence System",
-                outcome: "Scans resale marketplaces, analyzes listings with LLMs, identifies arbitrage opportunities in real-time.",
-                impact: "40+ hrs/week saved"
+                title: "E-commerce — Inventory Intelligence",
+                outcome: "Scans competitor pricing, predicts demand, auto-adjusts listings. Real-time alerts for arbitrage opportunities.",
+                impact: "40+ hrs/week saved",
+                industry: "Retail & Marketplaces"
               },
               {
-                title: "Enterprise RAG Platform",
-                outcome: "Video-to-knowledge system. Transforms content into searchable, interactive AI-powered Q&A.",
-                impact: "500+ users"
+                title: "Legal — Contract Analysis",
+                outcome: "Upload contracts, extract key terms, flag risks, compare against templates. Search across entire contract library.",
+                impact: "10x faster review",
+                industry: "Legal & Compliance"
               },
               {
-                title: "Municipal Operations Platform",
-                outcome: "End-to-end workflow: resident complaints to staff triage to field resolution. Automated routing and status updates.",
-                impact: "60% faster"
+                title: "Real Estate — Lead Qualification",
+                outcome: "AI qualifies inbound leads via chat, books showings, syncs with CRM. Answers property questions 24/7.",
+                impact: "3x more bookings",
+                industry: "Real Estate"
               },
               {
-                title: "AI Meeting Intelligence",
-                outcome: "Slack bot that summarizes meetings, stores transcriptions, enables semantic search across history.",
-                impact: "5+ hrs/week saved"
+                title: "Agency — Content Pipeline",
+                outcome: "Brief intake → AI draft → human polish → client review. Automated revisions, brand voice training, multi-format export.",
+                impact: "5x throughput",
+                industry: "Marketing Agencies"
+              },
+              {
+                title: "Healthcare — Patient Intake",
+                outcome: "Conversational intake form, symptom pre-screening, appointment scheduling. HIPAA-compliant, EHR integration.",
+                impact: "60% less admin time",
+                industry: "Healthcare"
               },
             ].map((project, i) => (
               <motion.div
@@ -258,15 +269,18 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="group p-6 md:p-8 bg-white rounded-2xl border border-zinc-100 hover:border-zinc-200 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-2 group-hover:text-violet-600 transition-colors">{project.title}</h3>
-                    <p className="text-zinc-600">{project.outcome}</p>
-                  </div>
-                  <div className="shrink-0">
-                    <span className="inline-flex px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-violet-100 to-purple-100 text-violet-700">
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-zinc-100 text-zinc-600">
+                      {project.industry}
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-violet-100 to-purple-100 text-violet-700">
                       {project.impact}
                     </span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 group-hover:text-violet-600 transition-colors">{project.title}</h3>
+                    <p className="text-zinc-600">{project.outcome}</p>
                   </div>
                 </div>
               </motion.div>
