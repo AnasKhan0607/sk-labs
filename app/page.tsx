@@ -341,7 +341,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 max-w-4xl">
               <div className="flex gap-6">
                 <img 
-                  src="https://avatars.githubusercontent.com/u/76663779?v=4" 
+                  src="/sk-labs/team/anas.jpg" 
                   alt="Anas Khan"
                   className="w-24 h-24 rounded-lg object-cover"
                 />
@@ -364,7 +364,7 @@ export default function Home() {
 
               <div className="flex gap-6">
                 <img 
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQF6wMcIGI08yg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718724457283?e=1749081600&v=beta&t=TjTmj4lNvGFo8tqltPt2lxfIxqF4yyZJ_jfpmTpRRlU" 
+                  src="/sk-labs/team/sabih.png" 
                   alt="Sabih Sarowar"
                   className="w-24 h-24 rounded-lg object-cover"
                 />
