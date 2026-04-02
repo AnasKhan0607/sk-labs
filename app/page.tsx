@@ -80,8 +80,13 @@ export default function Home() {
               OUR SOLUTIONS
             </p>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
+                {
+                  label: "To Find New Clients",
+                  title: "AI Lead Generation",
+                  desc: "Automated prospecting that finds your ideal customers. Data enrichment, outreach sequences, delivered to your inbox weekly."
+                },
                 {
                   label: "To Handle Inquiries",
                   title: "AI Assistants",
@@ -101,6 +106,11 @@ export default function Home() {
                   label: "To Connect Systems",
                   title: "Custom Integrations",
                   desc: "Your CRM, property software, ATS, accounting — we make them talk to each other and to AI."
+                },
+                {
+                  label: "To Close More Deals",
+                  title: "Sales Automation",
+                  desc: "Personalized outreach at scale. Email sequences, follow-ups, and CRM updates — all automated."
                 },
               ].map((item, i) => (
                 <motion.div
