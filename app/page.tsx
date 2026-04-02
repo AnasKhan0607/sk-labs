@@ -139,8 +139,7 @@ export default function Home() {
             {/* Corner glow */}
             <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#C9A66B]/10 rounded-full blur-3xl" />
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#C9A66B]/5 rounded-full blur-3xl" />
-          >
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-12 relative z-10">
               <div>
                 <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-6 flex items-center gap-3">
                   <span className="w-8 h-px bg-[#C9A66B]" />
@@ -225,8 +224,7 @@ export default function Home() {
                   {/* Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#C9A66B]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#C9A66B]/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                >
-                  <h3 className="text-xl font-serif mb-6">{ind.name}</h3>
+                  <h3 className="text-xl font-serif mb-6 relative z-10">{ind.name}</h3>
                   <ul className="space-y-3 mb-8">
                     {ind.items.map((item, j) => (
                       <li key={j} className="text-sm text-zinc-500 flex items-center gap-3">
