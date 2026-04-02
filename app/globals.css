@@ -12,22 +12,6 @@ body {
 }
 
 ::selection {
-  background-color: #3b82f6;
+  background-color: #18181b;
   color: white;
-}
-
-/* Custom cursor effect for links */
-a, button {
-  cursor: pointer;
-}
-
-/* Subtle gradient animation */
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
 }
