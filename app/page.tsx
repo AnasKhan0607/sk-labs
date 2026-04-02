@@ -364,7 +364,7 @@ export default function Home() {
 
               <div className="flex gap-6">
                 <img 
-                  src="https://avatars.githubusercontent.com/u/67878058?v=4" 
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQF6wMcIGI08yg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718724457283?e=1749081600&v=beta&t=TjTmj4lNvGFo8tqltPt2lxfIxqF4yyZJ_jfpmTpRRlU" 
                   alt="Sabih Sarowar"
                   className="w-24 h-24 rounded-lg object-cover"
                 />
