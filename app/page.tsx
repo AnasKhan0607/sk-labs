@@ -19,7 +19,9 @@ export default function Home() {
               <a href="#team" className="text-zinc-400 hover:text-white transition-colors">ABOUT</a>
             </div>
             <a 
-              href="#contact" 
+              href="https://cal.com/sabih/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative px-5 py-2.5 border border-[#C9A66B] text-[#C9A66B] text-sm tracking-wider hover:bg-[#C9A66B] hover:text-[#141414] transition-all group"
             >
               <span className="absolute inset-0 bg-[#C9A66B]/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -413,14 +415,24 @@ export default function Home() {
               30-minute call. No pitch deck. Just tell us what's slowing you down.
             </p>
             
-            <a
-              href="mailto:hello@evergreenlabs.dev"
-              className="relative inline-flex items-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all group"
-            >
-              <span className="absolute inset-0 bg-[#C9A66B] blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
-              <span className="relative">BOOK A CALL</span>
-              <span className="relative">→</span>
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://cal.com/sabih/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all group"
+              >
+                <span className="absolute inset-0 bg-[#C9A66B] blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
+                <span className="relative">BOOK A CALL</span>
+                <span className="relative">→</span>
+              </a>
+              <a
+                href="mailto:hello@evergreenlabs.dev"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-zinc-700 text-zinc-300 font-medium tracking-wider hover:bg-zinc-800 transition-all"
+              >
+                hello@evergreenlabs.dev
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
