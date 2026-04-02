@@ -20,20 +20,24 @@ export default function Home() {
             </div>
             <a 
               href="#contact" 
-              className="px-5 py-2.5 border border-[#C9A66B] text-[#C9A66B] text-sm tracking-wider hover:bg-[#C9A66B] hover:text-[#141414] transition-all"
+              className="relative px-5 py-2.5 border border-[#C9A66B] text-[#C9A66B] text-sm tracking-wider hover:bg-[#C9A66B] hover:text-[#141414] transition-all group"
             >
-              BOOK A CALL
+              <span className="absolute inset-0 bg-[#C9A66B]/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+              <span className="relative">BOOK A CALL</span>
             </a>
           </div>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative overflow-hidden">
+        {/* Hero glows */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#C9A66B]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#C9A66B]/5 rounded-full blur-3xl" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-4xl"
+          className="max-w-4xl relative z-10"
         >
           <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-8 flex items-center justify-center gap-3">
             <span className="w-8 h-px bg-[#C9A66B]" />
@@ -54,10 +58,11 @@ export default function Home() {
 
           <a 
             href="#contact" 
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all"
+            className="relative inline-flex items-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all group"
           >
-            TALK TO OUR TEAM
-            <span>→</span>
+            <span className="absolute inset-0 bg-[#C9A66B] blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
+            <span className="relative">TALK TO OUR TEAM</span>
+            <span className="relative">→</span>
           </a>
         </motion.div>
       </section>
@@ -104,8 +109,11 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-6 bg-[#1C1C1C] border border-zinc-800 hover:border-zinc-700 transition-all"
+                  className="relative group p-6 bg-[#1C1C1C] border border-zinc-800 hover:border-[#C9A66B]/50 transition-all"
                 >
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#C9A66B]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute -inset-px bg-gradient-to-b from-[#C9A66B]/20 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity -z-10" />
                   <div className="w-8 h-8 border border-zinc-700 flex items-center justify-center mb-6">
                     <div className="w-2 h-2 bg-[#C9A66B]" />
                   </div>
@@ -126,7 +134,11 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="bg-[#1C1C1C] border border-zinc-800 p-12 md:p-16"
+            className="relative bg-[#1C1C1C] border border-zinc-800 p-12 md:p-16 shadow-2xl shadow-[#C9A66B]/5"
+          >
+            {/* Corner glow */}
+            <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#C9A66B]/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#C9A66B]/5 rounded-full blur-3xl" />
           >
             <div className="grid md:grid-cols-2 gap-12">
               <div>
@@ -208,7 +220,11 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-8 border border-zinc-800"
+                  className="relative group p-8 border border-zinc-800 hover:border-[#C9A66B]/30 transition-all duration-300 overflow-hidden"
+                >
+                  {/* Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#C9A66B]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#C9A66B]/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 >
                   <h3 className="text-xl font-serif mb-6">{ind.name}</h3>
                   <ul className="space-y-3 mb-8">
@@ -280,14 +296,16 @@ export default function Home() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-32 px-6 bg-[#0F0F0F]">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-32 px-6 bg-[#0F0F0F] relative overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#C9A66B]/5 rounded-full blur-3xl" />
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-4xl md:text-5xl font-serif italic leading-relaxed mb-8">
+            <p className="text-4xl md:text-5xl font-serif italic leading-relaxed mb-8 drop-shadow-lg">
               "They understood our business first, then built the tech. 
               Our team saves 20+ hours a week on what used to be manual work."
             </p>
@@ -348,8 +366,11 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="py-32 px-6 border-t border-zinc-800">
-        <div className="max-w-4xl mx-auto text-center">
+      <section id="contact" className="py-32 px-6 border-t border-zinc-800 relative overflow-hidden">
+        {/* Background glows */}
+        <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#C9A66B]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-[#C9A66B]/5 rounded-full blur-3xl" />
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -370,10 +391,11 @@ export default function Home() {
             
             <a
               href="mailto:hello@sklabs.dev"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all"
+              className="relative inline-flex items-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all group"
             >
-              BOOK A CALL
-              <span>→</span>
+              <span className="absolute inset-0 bg-[#C9A66B] blur-2xl opacity-40 group-hover:opacity-60 transition-opacity" />
+              <span className="relative">BOOK A CALL</span>
+              <span className="relative">→</span>
             </a>
           </motion.div>
         </div>
