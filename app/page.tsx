@@ -30,14 +30,14 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100">
+    <main className="min-h-screen bg-white text-zinc-900">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-900">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <span className="text-xl font-bold tracking-tight">SK Labs</span>
           <a 
             href="#contact" 
-            className="px-4 py-2 bg-white text-zinc-900 text-sm font-medium rounded-lg hover:bg-zinc-200 transition-colors"
+            className="px-4 py-2 bg-zinc-900 text-white text-sm font-medium rounded-lg hover:bg-zinc-800 transition-colors"
           >
             Get started
           </a>
@@ -62,11 +62,11 @@ export default function Home() {
             transition={{ delay: 0.1 }}
           >
             Build AI that<br />
-            <span className="text-zinc-500">actually ships.</span>
+            <span className="text-zinc-400">actually ships.</span>
           </motion.h1>
 
           <motion.p 
-            className="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-12"
+            className="text-xl md:text-2xl text-zinc-600 max-w-2xl mb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -81,10 +81,10 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a href="#contact" className="px-8 py-4 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-200 transition-colors text-center">
+            <a href="#contact" className="px-8 py-4 bg-zinc-900 text-white font-medium rounded-lg hover:bg-zinc-800 transition-colors text-center">
               Start a project
             </a>
-            <a href="#work" className="px-8 py-4 border border-zinc-800 text-zinc-300 font-medium rounded-lg hover:bg-zinc-900 transition-colors text-center">
+            <a href="#work" className="px-8 py-4 border border-zinc-300 text-zinc-700 font-medium rounded-lg hover:bg-zinc-100 transition-colors text-center">
               See our work
             </a>
           </motion.div>
@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* Problem / Solution */}
-      <section className="py-32 px-6 border-t border-zinc-900">
+      <section className="py-32 px-6 border-t border-zinc-200">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -101,20 +101,20 @@ export default function Home() {
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
               You need AI yesterday.<br />
-              <span className="text-zinc-500">Hiring takes 6 months.</span>
+              <span className="text-zinc-400">Hiring takes 6 months.</span>
             </h2>
             
             <div className="grid md:grid-cols-2 gap-12 mt-16">
               <div>
                 <p className="text-zinc-500 text-sm font-medium uppercase tracking-wider mb-4">The problem</p>
-                <p className="text-xl text-zinc-300 leading-relaxed">
+                <p className="text-xl text-zinc-600 leading-relaxed">
                   Your competitors are shipping AI features. Your board is asking about AI strategy. 
                   But your team is at capacity, ML engineers are expensive, and hiring takes forever.
                 </p>
               </div>
               <div>
                 <p className="text-zinc-500 text-sm font-medium uppercase tracking-wider mb-4">Our solution</p>
-                <p className="text-xl text-zinc-300 leading-relaxed">
+                <p className="text-xl text-zinc-600 leading-relaxed">
                   We plug in as your AI engineering team. Fixed-scope projects, delivered in weeks. 
                   You get production-ready AI without the hiring risk or consultant bloat.
                 </p>
@@ -162,10 +162,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 border border-zinc-900 hover:bg-zinc-900/50 transition-colors"
+                className="p-8 border border-zinc-200 hover:bg-zinc-50 transition-colors"
               >
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-zinc-400">{item.desc}</p>
+                <p className="text-zinc-600">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -173,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* Work */}
-      <section id="work" className="py-32 px-6 bg-zinc-900/30">
+      <section id="work" className="py-32 px-6 bg-zinc-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -219,15 +219,15 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="p-8 border border-zinc-800 bg-zinc-950 hover:bg-zinc-900/50 transition-colors"
+                className="p-8 border border-zinc-200 bg-white hover:bg-zinc-50 transition-colors"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                    <p className="text-zinc-400">{project.outcome}</p>
+                    <p className="text-zinc-600">{project.outcome}</p>
                   </div>
                   <div className="md:text-right">
-                    <p className="text-blue-400 font-medium">{project.impact}</p>
+                    <p className="text-blue-600 font-medium">{project.impact}</p>
                   </div>
                 </div>
               </motion.div>
@@ -259,12 +259,12 @@ export default function Home() {
               <img 
                 src="https://avatars.githubusercontent.com/u/76663779?v=4" 
                 alt="Anas Khan"
-                className="w-20 h-20 rounded-full grayscale hover:grayscale-0 transition-all"
+                className="w-20 h-20 rounded-full"
               />
               <div>
                 <h3 className="text-xl font-semibold">Anas Khan</h3>
                 <p className="text-zinc-500 mb-3">Infrastructure & AI</p>
-                <p className="text-zinc-400 text-sm">
+                <p className="text-zinc-600 text-sm">
                   Production and platform engineering at enterprise scale. 
                   Built systems handling 70k+ devices. Ships AI products on the side.
                 </p>
@@ -281,12 +281,12 @@ export default function Home() {
               <img 
                 src="https://avatars.githubusercontent.com/u/67878058?v=4" 
                 alt="Sabih Sarowar"
-                className="w-20 h-20 rounded-full grayscale hover:grayscale-0 transition-all"
+                className="w-20 h-20 rounded-full"
               />
               <div>
                 <h3 className="text-xl font-semibold">Sabih Sarowar</h3>
                 <p className="text-zinc-500 mb-3">Product & Engineering</p>
-                <p className="text-zinc-400 text-sm">
+                <p className="text-zinc-600 text-sm">
                   Serial builder. Founded startups in energy and municipal tech. 
                   Full-stack engineer who ships fast and talks to customers.
                 </p>
@@ -297,7 +297,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 px-6 border-t border-zinc-900">
+      <section className="py-32 px-6 border-t border-zinc-200">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -316,20 +316,20 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="border border-zinc-900"
+                className="border border-zinc-200"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full p-6 text-left flex justify-between items-center hover:bg-zinc-900/50 transition-colors"
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-zinc-50 transition-colors"
                 >
                   <span className="font-medium pr-4">{faq.q}</span>
-                  <span className="text-2xl text-zinc-500">
+                  <span className="text-2xl text-zinc-400">
                     {openFaq === i ? "−" : "+"}
                   </span>
                 </button>
                 {openFaq === i && (
                   <div className="px-6 pb-6">
-                    <p className="text-zinc-400">{faq.a}</p>
+                    <p className="text-zinc-600">{faq.a}</p>
                   </div>
                 )}
               </motion.div>
@@ -339,14 +339,14 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="py-32 px-6">
+      <section id="contact" className="py-32 px-6 bg-zinc-900">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Ready to build?
             </h2>
             <p className="text-xl text-zinc-400 mb-10">
@@ -356,13 +356,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:hello@sklabs.dev"
-                className="px-8 py-4 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-200 transition-colors"
+                className="px-8 py-4 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-100 transition-colors"
               >
                 hello@sklabs.dev
               </a>
               <a
                 href="https://cal.com"
-                className="px-8 py-4 border border-zinc-800 text-zinc-300 font-medium rounded-lg hover:bg-zinc-900 transition-colors"
+                className="px-8 py-4 border border-zinc-700 text-zinc-300 font-medium rounded-lg hover:bg-zinc-800 transition-colors"
               >
                 Book a call
               </a>
@@ -372,9 +372,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-zinc-900">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-600">
-          <span className="font-semibold text-zinc-400">SK Labs</span>
+      <footer className="py-8 px-6 border-t border-zinc-200 bg-white">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-500">
+          <span className="font-semibold text-zinc-700">SK Labs</span>
           <span>Toronto, Canada</span>
         </div>
       </footer>
