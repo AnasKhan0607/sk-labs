@@ -4,115 +4,98 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#FAFAFA]">
+    <main className="min-h-screen bg-[#141414] text-white">
+      {/* Grid background */}
+      <div className="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
+      
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FAFAFA]/80 backdrop-blur-md">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#141414]/80 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-          <span className="text-xl font-bold tracking-tight text-zinc-900">SK Labs</span>
-          <a 
-            href="#contact" 
-            className="px-5 py-2.5 bg-zinc-900 text-white text-sm font-medium rounded-full hover:bg-zinc-800 transition-all"
-          >
-            Get in touch
-          </a>
+          <span className="text-xl font-semibold tracking-tight">SK Labs</span>
+          <div className="flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-8 text-sm tracking-wider">
+              <a href="#solutions" className="text-zinc-400 hover:text-white transition-colors">SOLUTIONS</a>
+              <a href="#process" className="text-zinc-400 hover:text-white transition-colors">PROCESS</a>
+              <a href="#team" className="text-zinc-400 hover:text-white transition-colors">ABOUT</a>
+            </div>
+            <a 
+              href="#contact" 
+              className="px-5 py-2.5 border border-[#C9A66B] text-[#C9A66B] text-sm tracking-wider hover:bg-[#C9A66B] hover:text-[#141414] transition-all"
+            >
+              BOOK A CALL
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-24 px-6">
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-4xl"
+        >
+          <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-8 flex items-center justify-center gap-3">
+            <span className="w-8 h-px bg-[#C9A66B]" />
+            AI SYSTEMS FOR OPERATIONS
+            <span className="w-8 h-px bg-[#C9A66B]" />
+          </p>
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-8">
+            The work your team<br />
+            does manually today.<br />
+            <span className="italic text-[#C9A66B]">Automated.</span>
+          </h1>
+          
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+            We help property managers, staffing agencies, and service businesses 
+            reduce admin work with custom AI tools.
+          </p>
+
+          <a 
+            href="#contact" 
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all"
+          >
+            TALK TO OUR TEAM
+            <span>→</span>
+          </a>
+        </motion.div>
+      </section>
+
+      {/* Solutions */}
+      <section id="solutions" className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-zinc-200 rounded-full mb-8 shadow-sm">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-zinc-600">Now serving property management & staffing</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 leading-[1.1] mb-6">
-              AI that runs your<br />
-              <span className="text-zinc-400">back office.</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-zinc-600 max-w-2xl mb-10 leading-relaxed">
-              We build AI systems for operations-heavy businesses. Automate the work 
-              that's eating your team's time.
+            <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-12 flex items-center gap-3">
+              <span className="w-8 h-px bg-[#C9A66B]" />
+              OUR SOLUTIONS
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" className="px-8 py-4 bg-zinc-900 text-white font-medium rounded-full hover:bg-zinc-800 transition-all text-center">
-                Book a call
-              </a>
-              <a href="#work" className="px-8 py-4 bg-white border border-zinc-200 text-zinc-700 font-medium rounded-full hover:border-zinc-300 hover:bg-zinc-50 transition-all text-center shadow-sm">
-                See examples
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* The Shift - Narrative */}
-      <section className="py-24 px-6 bg-zinc-900 text-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-16"
-          >
-            <div>
-              <p className="text-emerald-400 font-mono text-sm mb-4">2020</p>
-              <p className="text-xl text-zinc-300 leading-relaxed">
-                Most businesses run on spreadsheets, phone calls, and manual data entry. 
-                A property manager spends 4 hours a day on tenant emails. A staffing agency 
-                loses candidates to faster competitors.
-              </p>
-            </div>
-            <div>
-              <p className="text-emerald-400 font-mono text-sm mb-4">2025</p>
-              <p className="text-xl text-zinc-300 leading-relaxed">
-                AI becomes practical infrastructure. The companies that implement it first 
-                will operate at a fundamentally different speed. The gap is widening.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* What we build */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">Capabilities</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-12">What we build</h2>
             
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 {
+                  label: "To Handle Inquiries",
                   title: "AI Assistants",
-                  desc: "Handle tenant inquiries, qualify leads, answer candidate questions. 24/7, in your voice, integrated with your systems.",
-                  icon: "💬"
+                  desc: "Answer tenant questions, qualify leads, screen candidates. 24/7, in your voice, integrated with your existing systems."
                 },
                 {
-                  title: "Document Intelligence",
-                  desc: "Extract data from leases, contracts, resumes, invoices. Search across thousands of documents instantly.",
-                  icon: "📄"
+                  label: "To Find Information",
+                  title: "Document Search",
+                  desc: "Search across leases, contracts, resumes, and records. Ask questions in plain English, get instant answers."
                 },
                 {
+                  label: "To Eliminate Manual Work",
                   title: "Workflow Automation",
-                  desc: "Connect your systems. When X happens, do Y. No more copying data between tools or chasing updates.",
-                  icon: "⚡"
+                  desc: "When X happens, do Y. No more copying between tools, chasing status updates, or manual data entry."
                 },
                 {
+                  label: "To Connect Systems",
                   title: "Custom Integrations",
-                  desc: "Your CRM, property management software, ATS — we make them talk to each other and to AI.",
-                  icon: "🔗"
+                  desc: "Your CRM, property software, ATS, accounting — we make them talk to each other and to AI."
                 },
               ].map((item, i) => (
                 <motion.div
@@ -121,79 +104,124 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-8 bg-white border border-zinc-200 rounded-2xl hover:shadow-lg hover:border-zinc-300 transition-all"
+                  className="p-6 bg-[#1C1C1C] border border-zinc-800 hover:border-zinc-700 transition-all"
                 >
-                  <span className="text-3xl mb-4 block">{item.icon}</span>
-                  <h3 className="text-xl font-semibold text-zinc-900 mb-2">{item.title}</h3>
-                  <p className="text-zinc-600">{item.desc}</p>
+                  <div className="w-8 h-8 border border-zinc-700 flex items-center justify-center mb-6">
+                    <div className="w-2 h-2 bg-[#C9A66B]" />
+                  </div>
+                  <p className="text-[#C9A66B] text-xs tracking-wider mb-2 italic">{item.label}</p>
+                  <h3 className="text-xl font-serif mb-3">{item.title}</h3>
+                  <p className="text-sm text-zinc-500 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Core Problems */}
+      <section className="py-32 px-6">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="bg-[#1C1C1C] border border-zinc-800 p-12 md:p-16"
+          >
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-6 flex items-center gap-3">
+                  <span className="w-8 h-px bg-[#C9A66B]" />
+                  CORE PROBLEMS
+                </p>
+                <h2 className="text-3xl md:text-4xl font-serif leading-tight mb-8">
+                  Operations teams are stuck in manual mode.
+                </h2>
+                
+                <div className="space-y-4">
+                  {[
+                    "Tenant & client communications",
+                    "Candidate screening & scheduling",
+                    "Document processing & search",
+                    "Data entry across systems"
+                  ].map((problem, i) => (
+                    <div key={i} className="flex items-center gap-4 text-zinc-400 py-3 border-l-2 border-zinc-800 pl-4 hover:border-[#C9A66B] hover:text-white transition-all cursor-default">
+                      <span className="text-[#C9A66B] text-sm">{String(i + 1).padStart(2, '0')}</span>
+                      <span>{problem}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="flex flex-col justify-center">
+                <p className="text-6xl font-serif text-zinc-700 mb-4">40+</p>
+                <p className="text-sm tracking-[0.2em] text-zinc-500 mb-6">HOURS PER WEEK ON REPETITIVE TASKS</p>
+                <p className="text-zinc-400 leading-relaxed">
+                  Your team is spending half their time on work that AI can handle. 
+                  Every hour on admin is an hour not spent on growth, relationships, 
+                  or the work that actually matters.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Industries */}
-      <section id="work" className="py-24 px-6 bg-white">
+      <section className="py-32 px-6 bg-[#0F0F0F]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">Industries</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">Built for operations-heavy businesses</h2>
-            <p className="text-xl text-zinc-600 mb-12 max-w-2xl">
-              If your team spends hours on repetitive communication, data entry, or coordination — we can help.
+            <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-6 flex items-center gap-3">
+              <span className="w-8 h-px bg-[#C9A66B]" />
+              WHO WE SERVE
             </p>
+            <h2 className="text-3xl md:text-4xl font-serif mb-16">Built for operations-heavy businesses.</h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
                   name: "Property Management",
-                  examples: ["Tenant communications", "Maintenance tickets", "Lease processing", "Vacancy marketing"],
+                  items: ["Tenant communications", "Maintenance coordination", "Lease processing", "Vacancy marketing"],
                   stat: "70%",
                   statLabel: "inquiries automated"
                 },
                 {
                   name: "Staffing & Recruiting",
-                  examples: ["Candidate screening", "Interview scheduling", "Onboarding flows", "Compliance tracking"],
+                  items: ["Candidate screening", "Interview scheduling", "Onboarding automation", "Compliance tracking"],
                   stat: "3x",
                   statLabel: "faster placement"
                 },
                 {
-                  name: "Manufacturing",
-                  examples: ["Inventory visibility", "Supplier comms", "Quality docs", "Order processing"],
-                  stat: "40hrs",
-                  statLabel: "saved per week"
-                },
-                {
                   name: "Professional Services",
-                  examples: ["Client intake", "Document review", "Billing automation", "Knowledge search"],
+                  items: ["Client intake", "Document review", "Billing automation", "Knowledge search"],
                   stat: "10x",
                   statLabel: "faster lookup"
                 },
-              ].map((industry, i) => (
+              ].map((ind, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-6 bg-zinc-50 rounded-2xl border border-zinc-100"
+                  className="p-8 border border-zinc-800"
                 >
-                  <h3 className="font-semibold text-zinc-900 mb-4">{industry.name}</h3>
-                  <ul className="space-y-2 mb-6">
-                    {industry.examples.map((ex, j) => (
-                      <li key={j} className="text-sm text-zinc-600 flex items-center gap-2">
-                        <span className="w-1 h-1 bg-emerald-500 rounded-full" />
-                        {ex}
+                  <h3 className="text-xl font-serif mb-6">{ind.name}</h3>
+                  <ul className="space-y-3 mb-8">
+                    {ind.items.map((item, j) => (
+                      <li key={j} className="text-sm text-zinc-500 flex items-center gap-3">
+                        <span className="w-1 h-1 bg-[#C9A66B]" />
+                        {item}
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-4 border-t border-zinc-200">
-                    <p className="text-2xl font-bold text-zinc-900">{industry.stat}</p>
-                    <p className="text-sm text-zinc-500">{industry.statLabel}</p>
+                  <div className="pt-6 border-t border-zinc-800">
+                    <p className="text-3xl font-serif text-[#C9A66B]">{ind.stat}</p>
+                    <p className="text-xs tracking-wider text-zinc-600 mt-1">{ind.statLabel.toUpperCase()}</p>
                   </div>
                 </motion.div>
               ))}
@@ -202,82 +230,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 px-6 bg-zinc-900 text-white">
+      {/* Process */}
+      <section id="process" className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">Testimonials</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-12">What our partners say</h2>
+            <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-6 flex items-center gap-3">
+              <span className="w-8 h-px bg-[#C9A66B]" />
+              OUR PROCESS
+            </p>
+            <h2 className="text-3xl md:text-4xl font-serif mb-16">How we work with you.</h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  quote: "We were drowning in tenant emails. Now 70% are handled automatically. Our team finally has time to focus on growth.",
-                  name: "Property Management Director",
-                  company: "Regional PM Firm"
-                },
-                {
-                  quote: "Onboarding used to take 2 weeks per placement. Now it's 3 days. The ROI was obvious within the first month.",
-                  name: "Operations Manager",
-                  company: "Healthcare Staffing"
-                },
-                {
-                  quote: "They understood our business first, then built the tech. That's rare. They feel like an extension of our team.",
-                  name: "CEO",
-                  company: "Manufacturing Co."
-                },
-              ].map((t, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-6 bg-zinc-800 rounded-2xl"
-                >
-                  <p className="text-zinc-300 mb-6 leading-relaxed">"{t.quote}"</p>
-                  <div>
-                    <p className="font-semibold text-white">{t.name}</p>
-                    <p className="text-sm text-zinc-500">{t.company}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* How we work */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">Process</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-12">How we work</h2>
-            
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-12">
               {[
                 {
                   step: "01",
-                  title: "Discovery Call",
-                  desc: "30 minutes. You tell us what's broken, we tell you if AI can fix it. No pitch deck required."
+                  title: "Discovery",
+                  desc: "30-minute call. You tell us what's broken, we tell you if AI can fix it. No pitch deck, no pressure."
                 },
                 {
                   step: "02",
-                  title: "Scoped Proposal",
-                  desc: "Fixed price, clear deliverables, realistic timeline. Most projects are $5k–$25k over 2–6 weeks."
+                  title: "Proposal",
+                  desc: "Fixed scope, fixed price, clear timeline. Most projects are $5k–$25k and take 2–6 weeks to deploy."
                 },
                 {
                   step: "03",
                   title: "Build & Deploy",
-                  desc: "We build with you, not for you. Your team learns the system. You own everything."
+                  desc: "We build with you, not for you. Your team learns the system. You own everything we create."
                 },
               ].map((item, i) => (
                 <motion.div
@@ -287,9 +269,9 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <p className="text-5xl font-bold text-zinc-200 mb-4">{item.step}</p>
-                  <h3 className="text-xl font-semibold text-zinc-900 mb-2">{item.title}</h3>
-                  <p className="text-zinc-600">{item.desc}</p>
+                  <p className="text-5xl font-serif text-zinc-800 mb-6">{item.step}</p>
+                  <h3 className="text-xl font-serif mb-3">{item.title}</h3>
+                  <p className="text-zinc-500 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -297,43 +279,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonial */}
+      <section className="py-32 px-6 bg-[#0F0F0F]">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-4xl md:text-5xl font-serif italic leading-relaxed mb-8">
+              "They understood our business first, then built the tech. 
+              Our team saves 20+ hours a week on what used to be manual work."
+            </p>
+            <p className="text-zinc-500">
+              <span className="text-white">Operations Director</span> · Regional Property Management
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Team */}
-      <section className="py-24 px-6 bg-white">
+      <section id="team" className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">Team</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-12">Who you're working with</h2>
+            <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-6 flex items-center gap-3">
+              <span className="w-8 h-px bg-[#C9A66B]" />
+              THE TEAM
+            </p>
+            <h2 className="text-3xl md:text-4xl font-serif mb-16">Who you're working with.</h2>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
-              <div className="flex gap-5">
+            <div className="grid md:grid-cols-2 gap-12 max-w-3xl">
+              <div className="flex gap-6">
                 <img 
                   src="https://avatars.githubusercontent.com/u/76663779?v=4" 
                   alt="Anas Khan"
-                  className="w-20 h-20 rounded-2xl object-cover"
+                  className="w-20 h-20 object-cover grayscale"
                 />
                 <div>
-                  <h3 className="text-lg font-semibold text-zinc-900">Anas Khan</h3>
-                  <p className="text-emerald-600 text-sm font-medium mb-2">Infrastructure & AI</p>
-                  <p className="text-sm text-zinc-600">
+                  <h3 className="text-lg font-serif mb-1">Anas Khan</h3>
+                  <p className="text-[#C9A66B] text-sm mb-3">Infrastructure & AI</p>
+                  <p className="text-sm text-zinc-500 leading-relaxed">
                     Builds high-scale production systems with secure data handling. Ships AI agents and automation products.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-5">
+              <div className="flex gap-6">
                 <img 
                   src="https://avatars.githubusercontent.com/u/67878058?v=4" 
                   alt="Sabih Sarowar"
-                  className="w-20 h-20 rounded-2xl object-cover"
+                  className="w-20 h-20 object-cover grayscale"
                 />
                 <div>
-                  <h3 className="text-lg font-semibold text-zinc-900">Sabih Sarowar</h3>
-                  <p className="text-emerald-600 text-sm font-medium mb-2">Product & Engineering</p>
-                  <p className="text-sm text-zinc-600">
+                  <h3 className="text-lg font-serif mb-1">Sabih Sarowar</h3>
+                  <p className="text-[#C9A66B] text-sm mb-3">Product & Engineering</p>
+                  <p className="text-sm text-zinc-500 leading-relaxed">
                     2x founder in energy and legal tech. Product-minded engineer who knows how to integrate with client systems.
                   </p>
                 </div>
@@ -344,41 +348,41 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="py-24 px-6 bg-zinc-900 text-white">
-        <div className="max-w-3xl mx-auto text-center">
+      <section id="contact" className="py-32 px-6 border-t border-zinc-800">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <p className="text-[#C9A66B] text-sm tracking-[0.2em] mb-8 flex items-center justify-center gap-3">
+              <span className="w-8 h-px bg-[#C9A66B]" />
+              READY TO SEE WHAT'S POSSIBLE?
+              <span className="w-8 h-px bg-[#C9A66B]" />
+            </p>
+            
+            <h2 className="text-4xl md:text-5xl font-serif mb-6">
               Let's talk about your operations.
             </h2>
-            <p className="text-xl text-zinc-400 mb-10">
+            <p className="text-xl text-zinc-500 mb-12">
               30-minute call. No pitch deck. Just tell us what's slowing you down.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:hello@sklabs.dev"
-                className="px-8 py-4 bg-white text-zinc-900 font-medium rounded-full hover:bg-zinc-100 transition-all"
-              >
-                hello@sklabs.dev
-              </a>
-              <a
-                href="https://cal.com"
-                className="px-8 py-4 border border-zinc-700 text-white font-medium rounded-full hover:bg-zinc-800 transition-all"
-              >
-                Book a call
-              </a>
-            </div>
+            
+            <a
+              href="mailto:hello@sklabs.dev"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#C9A66B] text-[#141414] font-medium tracking-wider hover:bg-[#D4B87A] transition-all"
+            >
+              BOOK A CALL
+              <span>→</span>
+            </a>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 bg-zinc-900 border-t border-zinc-800">
-        <div className="max-w-6xl mx-auto flex justify-between items-center text-sm text-zinc-500">
-          <span className="font-medium text-zinc-400">SK Labs</span>
+      <footer className="py-8 px-6 border-t border-zinc-800">
+        <div className="max-w-6xl mx-auto flex justify-between items-center text-sm text-zinc-600">
+          <span>SK Labs</span>
           <span>Toronto, Canada</span>
         </div>
       </footer>
