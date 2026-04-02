@@ -1,7 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// Floating gradient orbs for visual interest
+const FloatingOrb = ({ className, delay = 0 }: { className: string; delay?: number }) => (
+  <motion.div
+    className={`absolute rounded-full blur-3xl opacity-30 ${className}`}
+    animate={{
+      y: [0, -30, 0],
+      x: [0, 15, 0],
+      scale: [1, 1.1, 1],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      delay,
+      ease: "easeInOut",
+    }}
+  />
+);
 
 const faqs = [
   {
@@ -32,12 +50,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-zinc-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="text-xl font-bold tracking-tight">SK Labs</span>
+          <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">SK Labs</span>
           <a 
             href="#contact" 
-            className="px-4 py-2 bg-zinc-900 text-white text-sm font-medium rounded-lg hover:bg-zinc-800 transition-colors"
+            className="px-5 py-2.5 bg-gradient-to-r from-violet-600 to-purple-600 text-white text-sm font-medium rounded-full hover:shadow-lg hover:shadow-violet-500/25 transition-all"
           >
             Get started
           </a>
@@ -45,15 +63,21 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="min-h-screen flex flex-col justify-center px-6 pt-20">
-        <div className="max-w-4xl mx-auto">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-blue-400 font-medium mb-4"
+      <section className="min-h-screen flex flex-col justify-center px-6 pt-20 relative overflow-hidden">
+        {/* Floating gradient orbs */}
+        <FloatingOrb className="w-[600px] h-[600px] bg-gradient-to-r from-violet-500 to-purple-500 -top-40 -right-40" delay={0} />
+        <FloatingOrb className="w-[400px] h-[400px] bg-gradient-to-r from-blue-500 to-cyan-400 top-1/2 -left-40" delay={2} />
+        <FloatingOrb className="w-[300px] h-[300px] bg-gradient-to-r from-amber-400 to-orange-500 bottom-20 right-1/4" delay={4} />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-100 to-purple-100 rounded-full mb-6"
           >
-            AI development studio
-          </motion.p>
+            <span className="w-2 h-2 bg-violet-500 rounded-full animate-pulse" />
+            <span className="text-violet-700 font-medium text-sm">AI Development Studio</span>
+          </motion.div>
           
           <motion.h1 
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-8"
@@ -62,7 +86,7 @@ export default function Home() {
             transition={{ delay: 0.1 }}
           >
             Build AI that<br />
-            <span className="text-zinc-400">actually ships.</span>
+            <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">actually ships.</span>
           </motion.h1>
 
           <motion.p 
@@ -81,10 +105,11 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a href="#contact" className="px-8 py-4 bg-zinc-900 text-white font-medium rounded-lg hover:bg-zinc-800 transition-colors text-center">
+            <a href="#contact" className="group px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-medium rounded-xl hover:shadow-lg hover:shadow-violet-500/25 transition-all text-center">
               Start a project
+              <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </a>
-            <a href="#work" className="px-8 py-4 border border-zinc-300 text-zinc-700 font-medium rounded-lg hover:bg-zinc-100 transition-colors text-center">
+            <a href="#work" className="px-8 py-4 border border-zinc-200 text-zinc-700 font-medium rounded-xl hover:bg-zinc-50 hover:border-zinc-300 transition-all text-center">
               See our work
             </a>
           </motion.div>
@@ -131,29 +156,37 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-16 text-center"
           >
-            <p className="text-zinc-500 text-sm font-medium uppercase tracking-wider mb-4">Capabilities</p>
-            <h2 className="text-3xl md:text-4xl font-bold">What we build</h2>
+            <p className="text-violet-600 text-sm font-semibold uppercase tracking-wider mb-4">Capabilities</p>
+            <h2 className="text-3xl md:text-5xl font-bold">What we build</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-1">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 title: "AI Agents",
-                desc: "Autonomous systems that handle complex workflows. Customer support, data processing, code generation — agents that actually work in production."
+                desc: "Autonomous systems that handle complex workflows. Customer support, data processing, code generation — agents that actually work in production.",
+                icon: "🤖",
+                gradient: "from-violet-500 to-purple-500"
               },
               {
                 title: "RAG Systems", 
-                desc: "Search and chat over your documents, codebase, or knowledge base. Production retrieval pipelines that scale."
+                desc: "Search and chat over your documents, codebase, or knowledge base. Production retrieval pipelines that scale.",
+                icon: "🔍",
+                gradient: "from-blue-500 to-cyan-500"
               },
               {
                 title: "Process Automation",
-                desc: "Replace manual workflows with intelligent automation. Data extraction, document processing, decision support."
+                desc: "Replace manual workflows with intelligent automation. Data extraction, document processing, decision support.",
+                icon: "⚡",
+                gradient: "from-amber-500 to-orange-500"
               },
               {
                 title: "AI Product Features",
-                desc: "Add AI capabilities to your existing product. Chat, search, recommendations, content generation — whatever moves the needle."
+                desc: "Add AI capabilities to your existing product. Chat, search, recommendations, content generation — whatever moves the needle.",
+                icon: "✨",
+                gradient: "from-emerald-500 to-teal-500"
               },
             ].map((item, i) => (
               <motion.div
@@ -162,8 +195,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 border border-zinc-200 hover:bg-zinc-50 transition-colors"
+                className="group p-8 bg-white rounded-2xl border border-zinc-100 hover:border-zinc-200 hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300"
               >
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform`}>
+                  {item.icon}
+                </div>
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-zinc-600">{item.desc}</p>
               </motion.div>
@@ -173,61 +209,64 @@ export default function Home() {
       </section>
 
       {/* Work */}
-      <section id="work" className="py-32 px-6 bg-zinc-50">
-        <div className="max-w-6xl mx-auto">
+      <section id="work" className="py-32 px-6 bg-gradient-to-b from-zinc-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.05),transparent_50%)]" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-16 text-center"
           >
-            <p className="text-zinc-500 text-sm font-medium uppercase tracking-wider mb-4">Track record</p>
-            <h2 className="text-3xl md:text-4xl font-bold">Systems we've built</h2>
+            <p className="text-violet-600 text-sm font-semibold uppercase tracking-wider mb-4">Track record</p>
+            <h2 className="text-3xl md:text-5xl font-bold">Systems we've built</h2>
           </motion.div>
 
-          <div className="space-y-1">
+          <div className="space-y-4">
             {[
               {
                 title: "AI-Powered Feature Request Platform",
                 outcome: "Customers request features via widget. AI implements in sandbox, generates PR, creates preview deploy.",
-                impact: "Reduced feature turnaround from weeks to hours"
+                impact: "Weeks → Hours"
               },
               {
                 title: "Marketplace Intelligence System",
                 outcome: "Scans resale marketplaces, analyzes listings with LLMs, identifies arbitrage opportunities in real-time.",
-                impact: "Automated 40+ hours/week of manual research"
+                impact: "40+ hrs/week saved"
               },
               {
                 title: "Enterprise RAG Platform",
                 outcome: "Video-to-knowledge system. Transforms content into searchable, interactive AI-powered Q&A.",
-                impact: "500+ users, 10x faster information retrieval"
+                impact: "500+ users"
               },
               {
                 title: "Municipal Operations Platform",
                 outcome: "End-to-end workflow: resident complaints to staff triage to field resolution. Automated routing and status updates.",
-                impact: "Cut response time by 60%"
+                impact: "60% faster"
               },
               {
                 title: "AI Meeting Intelligence",
                 outcome: "Slack bot that summarizes meetings, stores transcriptions, enables semantic search across history.",
-                impact: "Saved 5+ hours/week per team member"
+                impact: "5+ hrs/week saved"
               },
             ].map((project, i) => (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="p-8 border border-zinc-200 bg-white hover:bg-zinc-50 transition-colors"
+                transition={{ delay: i * 0.1 }}
+                className="group p-6 md:p-8 bg-white rounded-2xl border border-zinc-100 hover:border-zinc-200 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                    <h3 className="text-lg font-semibold mb-2 group-hover:text-violet-600 transition-colors">{project.title}</h3>
                     <p className="text-zinc-600">{project.outcome}</p>
                   </div>
-                  <div className="md:text-right">
-                    <p className="text-blue-600 font-medium">{project.impact}</p>
+                  <div className="shrink-0">
+                    <span className="inline-flex px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-violet-100 to-purple-100 text-violet-700">
+                      {project.impact}
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -243,10 +282,10 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-16 text-center"
           >
-            <p className="text-zinc-500 text-sm font-medium uppercase tracking-wider mb-4">Team</p>
-            <h2 className="text-3xl md:text-4xl font-bold">Who you're working with</h2>
+            <p className="text-violet-600 text-sm font-semibold uppercase tracking-wider mb-4">Team</p>
+            <h2 className="text-3xl md:text-5xl font-bold">Who you're working with</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -254,16 +293,19 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex gap-6"
+              className="group p-8 bg-gradient-to-br from-zinc-50 to-white rounded-2xl border border-zinc-100 hover:shadow-xl hover:shadow-violet-500/5 transition-all duration-300"
             >
-              <img 
-                src="https://avatars.githubusercontent.com/u/76663779?v=4" 
-                alt="Anas Khan"
-                className="w-20 h-20 rounded-full"
-              />
-              <div>
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-500 to-purple-500 rounded-full blur-lg opacity-20 group-hover:opacity-30 transition-opacity" />
+                  <img 
+                    src="https://avatars.githubusercontent.com/u/76663779?v=4" 
+                    alt="Anas Khan"
+                    className="w-24 h-24 rounded-full relative z-10 ring-4 ring-white"
+                  />
+                </div>
                 <h3 className="text-xl font-semibold">Anas Khan</h3>
-                <p className="text-zinc-500 mb-3">Infrastructure & AI</p>
+                <p className="text-violet-600 font-medium mb-3">Infrastructure & AI</p>
                 <p className="text-zinc-600 text-sm">
                   Production and platform engineering at enterprise scale. 
                   Built systems handling 70k+ devices. Ships AI products on the side.
@@ -276,16 +318,19 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="flex gap-6"
+              className="group p-8 bg-gradient-to-br from-zinc-50 to-white rounded-2xl border border-zinc-100 hover:shadow-xl hover:shadow-violet-500/5 transition-all duration-300"
             >
-              <img 
-                src="https://avatars.githubusercontent.com/u/67878058?v=4" 
-                alt="Sabih Sarowar"
-                className="w-20 h-20 rounded-full"
-              />
-              <div>
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full blur-lg opacity-20 group-hover:opacity-30 transition-opacity" />
+                  <img 
+                    src="https://avatars.githubusercontent.com/u/67878058?v=4" 
+                    alt="Sabih Sarowar"
+                    className="w-24 h-24 rounded-full relative z-10 ring-4 ring-white"
+                  />
+                </div>
                 <h3 className="text-xl font-semibold">Sabih Sarowar</h3>
-                <p className="text-zinc-500 mb-3">Product & Engineering</p>
+                <p className="text-violet-600 font-medium mb-3">Product & Engineering</p>
                 <p className="text-zinc-600 text-sm">
                   Serial builder. Founded startups in energy and municipal tech. 
                   Full-stack engineer who ships fast and talks to customers.
@@ -297,34 +342,34 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 px-6 border-t border-zinc-200">
+      <section className="py-32 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-16 text-center"
           >
-            <p className="text-zinc-500 text-sm font-medium uppercase tracking-wider mb-4">FAQ</p>
-            <h2 className="text-3xl md:text-4xl font-bold">Questions? Answers.</h2>
+            <p className="text-violet-600 text-sm font-semibold uppercase tracking-wider mb-4">FAQ</p>
+            <h2 className="text-3xl md:text-5xl font-bold">Questions? Answers.</h2>
           </motion.div>
 
-          <div className="space-y-1">
+          <div className="space-y-3">
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="border border-zinc-200"
+                className="bg-zinc-50 rounded-2xl overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full p-6 text-left flex justify-between items-center hover:bg-zinc-50 transition-colors"
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-zinc-100 transition-colors"
                 >
-                  <span className="font-medium pr-4">{faq.q}</span>
-                  <span className="text-2xl text-zinc-400">
-                    {openFaq === i ? "−" : "+"}
+                  <span className="font-semibold pr-4">{faq.q}</span>
+                  <span className={`w-8 h-8 rounded-full flex items-center justify-center bg-violet-100 text-violet-600 transition-transform ${openFaq === i ? 'rotate-45' : ''}`}>
+                    +
                   </span>
                 </button>
                 {openFaq === i && (
@@ -339,14 +384,15 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="py-32 px-6 bg-zinc-900">
-        <div className="max-w-2xl mx-auto text-center">
+      <section id="contact" className="py-32 px-6 bg-gradient-to-br from-zinc-900 via-zinc-900 to-violet-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(139,92,246,0.15),transparent_50%)]" />
+        <div className="max-w-2xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Ready to build?
             </h2>
             <p className="text-xl text-zinc-400 mb-10">
@@ -356,13 +402,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:hello@sklabs.dev"
-                className="px-8 py-4 bg-white text-zinc-900 font-medium rounded-lg hover:bg-zinc-100 transition-colors"
+                className="group px-8 py-4 bg-white text-zinc-900 font-medium rounded-xl hover:shadow-lg hover:shadow-white/10 transition-all"
               >
                 hello@sklabs.dev
+                <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </a>
               <a
                 href="https://cal.com"
-                className="px-8 py-4 border border-zinc-700 text-zinc-300 font-medium rounded-lg hover:bg-zinc-800 transition-colors"
+                className="px-8 py-4 border border-zinc-700 text-zinc-300 font-medium rounded-xl hover:bg-white/5 hover:border-zinc-600 transition-all"
               >
                 Book a call
               </a>
