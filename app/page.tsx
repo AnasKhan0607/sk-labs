@@ -343,7 +343,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 max-w-4xl">
               <div className="flex gap-6">
                 <img 
-                  src="/sk-labs/team/anas.jpg" 
+                  src="/team/anas.jpg" 
                   alt="Anas Khan"
                   className="w-24 h-24 rounded-lg object-cover"
                 />
@@ -366,7 +366,7 @@ export default function Home() {
 
               <div className="flex gap-6">
                 <img 
-                  src="/sk-labs/team/sabih.png" 
+                  src="/team/sabih.png" 
                   alt="Sabih Sarowar"
                   className="w-24 h-24 rounded-lg object-cover"
                 />
