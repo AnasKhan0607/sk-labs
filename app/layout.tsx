@@ -15,11 +15,20 @@ export const metadata: Metadata = {
     description: "We help property managers, staffing agencies, and service businesses reduce admin work with custom AI tools.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "https://evergreenlabs.dev/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Evergreen Labs - AI Systems for Operations",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Evergreen Labs — AI Systems for Operations",
     description: "We help property managers, staffing agencies, and service businesses reduce admin work with custom AI tools.",
+    images: ["https://evergreenlabs.dev/og-image.png"],
   },
 };
 
